@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.4/angular-resource.min.js"></script>
+<script src="jquery.colorbox-min.js"></script>
+
+<title>PTelaniin</title>
+</head>
+
+<body>
+
+<div class="container contBusqueda">
+<div class="col-md-12 content" ng-app="myApp" ng-controller="myCtrl">
+<div class="searching">
+    <input type="text" class="busqueda" id="busqueda" ng-model="toSearch" placeholder="Search a product" required>
+</div>
+<ul class="ttlProd">												 
+	<li class="id">Id</li>
+	<li class="name">Name</li>
+	<li class="price">Price</li>
+	<li class="stock">Stock</li>
+	<li class="created">Created at</li>
+	<li class="updated">Updated at</li>
+</ul>
+<ul class="Prod" ng-repeat="producto in productos | filter:toSearch">												
+	<li class="id"><span class="ttlinMbl">id</span><span class="infoProd">{{producto.id}}</span></li>
+	<li class="name"><span class="ttlinMbl">Name</span><span class="infoProd">{{producto.name}}</span></li>
+	<li class="price"><span class="ttlinMbl">Price</span><span class="infoProd">{{producto.price}}</span></li>
+	<li class="stock"><span class="ttlinMbl">Stock</span><span class="infoProd">{{producto.stock}}</span></li>
+	<li class="created"><span class="ttlinMbl">Created</span><span class="infoProd">{{producto.created_at}}</span></li>
+	<li class="updated"><span class="ttlinMbl">Updated</span><span class="infoProd">{{producto.updated_at}}</span></li>
+</ul>
+</div>
+</div>
+<div style="display:none;">
+    <div id="welcome">
+        Welcome
+    </div>
+</div>
+<script>
+
+function openColorBox(){
+$.colorbox({width:"90%", height:"250px", inline:true, href:"#welcome", scrolling: false, onLoad: function() {$('#cboxClose').remove();}});
+//$.colorbox({href:"index.html"});
+}
+setTimeout(openColorBox, 0000);
+window.setTimeout(function() {$.colorbox.close();}, 1000);
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $http.get("https://snacks-market-api-test.herokuapp.com/products.md")
+    .then(function(response) {
+        $scope.productos = response.data;	
+    });
+});
+</script>
+</body>
+</html>

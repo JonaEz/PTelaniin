@@ -1,0 +1,195 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{margin:0px; padding:0px; background-color: #eaeaea !important;}
+.contBusqueda{margin:25px 0px;}
+.content{background:#fff; min-height:580px !important; padding:20px 0px 50px;}
+
+#welcome {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    font-size: 50px;
+    color: #4e4e4e;
+    padding: 65px 0px;
+	margin: 25px auto 0px;
+}
+
+#cboxOverlay {
+    position: fixed;
+	top: 0;
+    width: 100%;
+    height: 100%;
+    /*opacity: 0.8 !important;*/
+	opacity: inherit !important;
+	background:#fff;
+}
+#colorbox{background:#fff; outline: 0px !important;}
+
+.login{
+	width: 550px;
+    padding: 40px 0px;
+    background: #f3092a;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -275px;
+    margin-top: -116px;
+}
+.login input {
+    display: block;
+    width: 320px;
+    height: 25px;
+    border: 0px;
+    background: #f3092a;
+    border-bottom: 1px solid #ff526a;
+    color: #fff;
+}
+#errorUser{text-align: center; color: #fff; height: 20px;}
+
+.login ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+.login ::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+.login :-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.login :-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+
+.infologin{display:block; width:320px; height:26px; margin:0 auto 15px;}
+.btnlogin{
+	background: #b80b23;
+    display: block;
+    width: 320px;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 4px 0px;
+    cursor: pointer;
+}
+.btnlogin:hover{
+	background: #c60a25;
+}
+
+.fleft{float:left;}
+.fright{float:right;}
+
+/* XS Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+.searching{height:35px; margin:20px auto; text-align:right;}
+.busqueda{width:100%; height:35px; background:#f2f2f2; border:1px solid #e1e1e1; font-size:16px; padding:0px 15px;}
+
+.ttlinMbl{display:block; font-size: 12px; background:#f3092a; float:left; margin:1px 5px 0px 0px; width:65px; height:20px; color:#fff; text-align:left; padding-left:5px;}
+.infoProd{float:left; font-size:12px;}
+
+.ttlProd{background:#f3092a; display:none; margin:0 auto; list-style:none; color:#fff; padding:0px;}
+.ttlProd li{display:inline-block; padding:5px; text-align:center !important;}
+
+.Prod{background:#fff; display:block; margin:0 auto 25px; list-style:none; color:#373737; padding:0px; border:1px solid #f2f2f2; padding:0 1px 1px;}
+.Prod li{height: 21px; text-align:center !important;}
+
+.id{width:100%;}
+.name{width:100%;}
+.price{width:100%;}
+.stock{width:100%;}
+.created{width:100%;}
+.updated{width:100%;}
+}
+	
+/* SM Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+.searching{height:35px; margin:20px auto; text-align:right;}
+.busqueda{width:100%; height:35px; background:#f2f2f2; border:1px solid #e1e1e1; font-size:16px; padding:0px 15px;}
+
+.ttlinMbl{display:block; background:#f3092a; float:left; margin:1px 15px 0px 0px; width:150px; height:20px; color:#fff; text-align:left; padding-left:15px;}
+.infoProd{float:left;}
+
+.ttlProd{background:#f3092a; display:none; margin:0 auto; list-style:none; color:#fff; padding:0px;}
+.ttlProd li{display:inline-block; padding:5px; text-align:center !important;}
+
+.Prod{background:#fff; display:block; margin:0 auto 25px; list-style:none; color:#373737; padding:0px; border:1px solid #f2f2f2; padding:0 1px 1px;}
+.Prod li{height: 21px; text-align:center !important;}
+
+.id{width:500px;}
+.name{width:500px;}
+.price{width:500px;}
+.stock{width:500px;}
+.created{width:500px;}
+.updated{width:500px;}
+}
+
+/* MD Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+.searching{height:35px; margin:20px auto; text-align:right;}
+.busqueda{width:100%; height:35px; background:#f2f2f2; border:1px solid #e1e1e1; font-size:16px; padding:0px 15px;}
+
+.ttlinMbl{display:block; background:#f3092a; float:left; margin:1px 15px 0px 0px; width:150px; height:20px; color:#fff; text-align:left; padding-left:15px;}
+.infoProd{float:left;}
+
+.ttlProd{background:#f3092a; display:none; margin:0 auto; list-style:none; color:#fff; padding:0px;}
+.ttlProd li{display:inline-block; padding:5px; text-align:center !important;}
+
+.Prod{background:#fff; display:block; margin:0 auto 25px; list-style:none; color:#373737; padding:0px; border:1px solid #f2f2f2; padding:0 1px 1px;}
+.Prod li{height: 21px; text-align:center !important;}
+
+.id{width:500px;}
+.name{width:500px;}
+.price{width:500px;}
+.stock{width:500px;}
+.created{width:500px;}
+.updated{width:500px;}
+
+}
+
+/* LG Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+.searching{height:35px; margin:20px auto; text-align:right;}
+.busqueda{width:500px; height:35px; background:#f2f2f2; border:1px solid #e1e1e1; font-size:16px; padding:0px 15px;}
+
+.ttlinMbl{display:none; background:#f3092a; float:left; margin:1px 15px 0px 0px; width:150px; height:20px; color:#fff; text-align:left; padding-left:15px;}
+.infoProd{}
+
+.ttlProd{background:#f3092a; display:block; margin:0 auto; list-style:none; color:#fff; padding:0px;}
+.ttlProd li{display:inline-block; padding:5px; text-align:center !important;}
+
+.Prod{background:#fff; display:block; margin:0 auto; list-style:none; color:#373737; padding:0px; border-bottom:1px solid #f2f2f2;}
+.Prod li{display:inline-block; padding:5px; text-align:center !important;}
+
+.id{width:5%;}
+.name{width:25%;}
+.price{width:7%;}
+.stock{width:7%;}
+.created{width:26%;}
+.updated{width:27%;}
+
+}
+
+/* XL Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+.searching{height:35px; margin:20px auto; text-align:right;}
+.busqueda{width:500px; height:35px; background:#f2f2f2; border:1px solid #e1e1e1; font-size:16px; padding:0px 15px;}
+
+.ttlinMbl{display:none; background:#f3092a; float:left; margin:1px 15px 0px 0px; width:150px; height:20px; color:#fff; text-align:left; padding-left:15px;}
+.infoProd{}
+
+.ttlProd{background:#f3092a; display:block; margin:0 auto; list-style:none; color:#fff; padding:0px;}
+.ttlProd li{display:inline-block; padding:5px; text-align:center !important;}
+
+.Prod{background:#fff; display:block; margin:0 auto; list-style:none; color:#373737; padding:0px; border-bottom:1px solid #f2f2f2;}
+.Prod li{display:inline-block; padding:5px; text-align:center !important;}
+
+.id{width:5%;}
+.name{width:25%;}
+.price{width:7%;}
+.stock{width:7%;}
+.created{width:27%;}
+.updated{width:27%;}
+
+}
