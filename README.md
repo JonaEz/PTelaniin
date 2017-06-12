@@ -7,3 +7,6 @@ Frontend responsive, se conecta a un API para realizar lo siguiente
   - Listar productos.
   - Búsqueda de productos. 
 
+LOGIN
+user = admin@snacks.io
+pass = 123456
