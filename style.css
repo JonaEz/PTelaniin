@@ -46,7 +46,19 @@ body{margin:0px; padding:0px; background-color: #eaeaea !important;}
     border-bottom: 1px solid #ff526a;
     color: #fff;
 }
-#errorUser{text-align: center; color: #fff; height: 20px;}
+#errorUser {
+    text-align: center;
+    color: #fff;
+    height: 15px;
+    font-family: arial;
+    font-size: 13px;
+    display: block;
+    width: 320px;
+    margin: 0 auto 15px;
+    padding: 5px 0px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
 
 .login ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #fff;
@@ -63,10 +75,10 @@ body{margin:0px; padding:0px; background-color: #eaeaea !important;}
 
 .infologin{display:block; width:320px; height:26px; margin:0 auto 15px;}
 .btnlogin{
-	background: #b80b23;
+	background: #b80b23 !important;
     display: block;
     width: 320px;
-    border: none;
+    border: none !important;
     margin: 0 auto;
     text-align: center;
     color: #fff !important;

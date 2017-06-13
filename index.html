@@ -2,12 +2,37 @@
 <html>
 <head>
 <meta charset="utf-8">
-
 <link rel="stylesheet" type="text/css" href="style.css">
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="jquery.colorbox-min.js"></script>
+<script type="text/javascript" >
+		function login(form){
+			var ajax=new XMLHttpRequest();
+			ajax.onreadystatechange = function(){
+				var userIN = document.getElementById("userIN").value;
+				var passIN = document.getElementById("passIN").value;
+			
+				if (String(userIN) == "") {
+					document.getElementById("errorUser").innerHTML = "Required user";
+					document.getElementById("userIN").focus();
+				}
+				else if (String(passIN) == "") {
+					document.getElementById("errorUser").innerHTML = "You need a pasword";
+					document.getElementById("passIN").focus();
+				}
+				else if(this.readyState == 4 && this.status == 200){
+					location.href="productos.html"
+				}
+				else if(this.readyState == 4 && this.status !== 200){
+					document.getElementById("errorUser").innerHTML = "Wrong user";
+					document.getElementById("passIN").value = "";
+					document.getElementById("userIN").value = "";
+				}
+			}
+			ajax.open("POST","https://snacks-market-api-test.herokuapp.com/auth/login");
+			ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			ajax.send("email="+form.email.value+"&password="+form.password.value);
+		}
+</script>
 <title>PTelaniin</title>
 </head>
 
@@ -17,41 +42,16 @@
     <div class="login" ng-app="login" ng-controller="loginCtrl">
         <form name="loginForm" method="post">
             <div class="infologin">
-            
-            <input type="email" value="" id="userIN" name="userinfo" ng-model="userinfo" placeholder="User" required>
+            <input type="email" value="" id="userIN" name="email" ng-model="userinfo" placeholder="User" required>
             </div>
             <div class="infologin">
-            <input type="password" value="" id="passIN" name="userinfo" placeholder="Password" required>
+            <input type="password" value="" id="passIN" name="password" placeholder="Password" required>
             </div>
             <p id="errorUser"></p>
-            <a class="btnlogin" onClick="myFunction();">Login</a>
+            <input type="button" value="Login" class="btnlogin" onclick="login(this.form)"/><br>
         </form>
-        
     </div>
 </div>
 </div>
-<script>
-function redireccionar() {
-	location.href="productos.html"
-} 
-
-function myFunction() {
-	var x, text;
-	var user = "admin@snacks.io";
-	var pass = "123456";
-	var userIN = document.getElementById("userIN").value;
-	var passIN = document.getElementById("passIN").value;
-
-	if (String(userIN) == "admin@snacks.io" && String(passIN) == "123456"){
-		setTimeout ("redireccionar()", 0000);
-	}
-	else if (String(userIN) == "" && String(passIN) == "") {
-		document.getElementById("errorUser").innerHTML = "Wrong User";
-	}
-	else if (String(userIN) !== "admin@snacks.io" || String(passIN) !== "123456") {
-		document.getElementById("errorUser").innerHTML = "Wrong Password";
-	}
-}
-</script>
 </body>
 </html>
